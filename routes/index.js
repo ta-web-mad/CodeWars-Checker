@@ -33,11 +33,11 @@ let eachStudent = {
   pass: false
 }
 
-router.get('/', (req, res, next) => {
+router.get('/a', (req, res, next) => {
   res.render('index');
 });
 
-router.post('/result', (req, res, next) => {
+router.post('/result2', (req, res, next) => {
   axios.get(`${kata}${req.body.kataId}`)
   .then((dataKata)=>{
     
@@ -107,14 +107,14 @@ router.post('/Cresult', (req, res, next) => {
   })
 });
 
-router.get('/a', (req, res, next) => {
+router.get('/', (req, res, next) => {
   Course.find({})
   .then(data=>{
     res.render('index2',{data});
   })
 });
 
-router.post('/result2', (req, res, next) => {
+router.post('/result', (req, res, next) => {
   Course.findOne({courseName:req.body.Course})
   .then((course)=>{
     axios.get(`${kata}${req.body.kataId}`)
