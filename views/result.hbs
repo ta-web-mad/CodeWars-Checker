@@ -1,0 +1,11 @@
+<h1>{{kataName}}</h1>
+{{#each result}}
+<div class="student">
+  <h1>{{this.name}}</h1>
+  {{#if this.pass}}
+  <div class="res pass">
+    <p>A CORREGIR</p>
+  </div>
+  {{/if}}
+</div>
+{{/each}}
