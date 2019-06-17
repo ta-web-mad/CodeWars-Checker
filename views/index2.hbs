@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<form action="/result2" method="post">
+<label for="">Kata Id</label>
+<input class="code" type="text" name="kataId" id="">
+<select name="Course" id="">
+{{#each data}}
+  <option>{{this.courseName}}</option>
+{{/each}}
+</select>
+<input class="btn" type="submit" value="RUN">
+</form>

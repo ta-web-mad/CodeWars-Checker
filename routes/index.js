@@ -1,7 +1,9 @@
 const express = require('express');
+const Course = require('../models/Course');
 const router  = express.Router();
 const axios = require('axios');
 const kata = "https://www.codewars.com/api/v1/code-challenges/";
+
 // let result = {
 //   name: "",
 //   list: [],
@@ -104,6 +106,53 @@ router.post('/Cresult', (req, res, next) => {
     console.log(err)
   })
 });
+
+router.get('/a', (req, res, next) => {
+  Course.find({})
+  .then(data=>{
+    res.render('index2',{data});
+  })
+});
+
+router.post('/result2', (req, res, next) => {
+  Course.findOne({courseName:req.body.Course})
+  .then((course)=>{
+    axios.get(`${kata}${req.body.kataId}`)
+    .then((dataKata)=>{
+      
+       Promise.all(course.students.map((student)=>{
+        return axios.get(`https://www.codewars.com/api/v1/users/${student.codewars}/code-challenges/completed?page=0`)
+        .then((dataUser)=>{
+          console.log(dataUser)
+          const user = {name:student.name}
+          user.katas = dataUser.data.data
+          return user
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+      }))
+      .then(arrUser => {
+        const result = arrUser.filter(user => {
+          return user.katas.some(eachKata => 
+            eachKata.id == req.body.kataId
+          )
+        })
+        result[Math.floor(Math.random()*result.length)].pass = true
+        res.render("result", {kataName:dataKata.data.name, result})
+      })
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  
+  })
+  .catch((err)=>{console.log(err)})
+
+});
+
+
+
 
 
 
