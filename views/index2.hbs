@@ -1,7 +1,11 @@
 <h1>{{title}}</h1>
+<div class="cont">
+
 <form action="/result" method="post">
+<div class="inputId">
 <label for="">Kata Id</label>
 <input class="code" type="text" name="kataId" id="">
+</div>
 <select name="Course" id="">
 {{#each data}}
   <option>{{this.courseName}}</option>
@@ -9,3 +13,6 @@
 </select>
 <input class="btn" type="submit" value="RUN">
 </form>
+<img src="http://1.bp.blogspot.com/-X0s6R6vIDkk/UWAv5N-PfNI/AAAAAAAABgY/KyzZ2eQuY-M/s640/jiraja-montando-a-un-burro.jpg" alt="">
+</div>
+
