@@ -1,11 +1,36 @@
-<h1>{{kataName}}</h1>
-{{#each result}}
-<div class="student">
-  <h1>{{this.name}}</h1>
-  {{#if this.pass}}
-  <div class="res pass">
-    <p>A CORREGIR</p>
+<main class="results container">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-6 align-self-center">
+
+      <h1>Estadísticas de resolución</h1>
+      <p>Kata: {{kataName}}</p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">¿Corrige?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each result}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>
+              {{#if this.pass}}
+              <div class="res pass">
+                ✓
+              </div>
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
+
   </div>
-  {{/if}}
-</div>
-{{/each}}
+</main>
