@@ -37,56 +37,13 @@ router.get('/a', (req, res, next) => {
   res.render('index');
 });
 
-router.post('/result2', (req, res, next) => {
-  axios.get(`${kata}${req.body.kataId}`)
-    .then((dataKata) => {
-
-      Promise.all(Students.map((student) => {
-        return axios.get(`https://www.codewars.com/api/v1/users/${student.codewars}/code-challenges/completed?page=0`)
-          .then((dataUser) => {
-            // result.counter++
-            // eachStudent.name=student
-            // dataUser.data.data.forEach(eachKata=>{
-            //   if(eachKata.id == req.body.kataId){
-            //     eachStudent.pass=true
-            //   }
-            // })
-            // result.list.push({...eachStudent})
-            // eachStudent.pass=false
-            // if(result.counter==Students.length){
-            //   res.render("result",{result})
-            // }
-            const user = { name: student.name }
-            user.katas = dataUser.data.data
-            console.log(user)
-            return user
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      }))
-        .then(arrUser => {
-          console.log(arrUser)
-          const result = arrUser.filter(user => {
-            return user.katas.some(eachKata =>
-              eachKata.id == req.body.kataId
-            )
-          })
-          result[Math.floor(Math.random() * result.length)].pass = true
-          console.log(result)
-          res.render("result", { kataName: dataKata.data.name, result })
-        })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-});
 
 router.post('/Cresult', (req, res, next) => {
   result.id = req.body.kataId;
   axios.get(`${kata}${result.id}`)
     .then((dataKata) => {
       result.name = dataKata.data.name;
+      result.id = dataKata.data.id;
       Students.forEach(student => {
         axios.get(`https://www.codewars.com/api/v1/users/${student}/code-challenges/completed?page=0`)
           .then((dataUser) => {
@@ -110,7 +67,7 @@ router.post('/Cresult', (req, res, next) => {
 router.get('/', (req, res, next) => {
   Course.find({})
     .then(data => {
-      res.render('index2', { data });
+      res.render('index', { data });
     })
 });
 
@@ -134,10 +91,12 @@ router.post('/result', (req, res, next) => {
             .then(arrUser => {
               const result = arrUser.filter(user => {
                 return user.katas.some(eachKata =>
-                  eachKata.id == req.body.kataId
+                  eachKata.id == dataKata.data.id
                 )
               })
-              // result[Math.floor(Math.random() * result.length)].pass = true
+              if(result.length>0){
+                result[Math.floor(Math.random() * result.length)].pass = true
+              }
               // TODO
               res.render("result", { kataName: dataKata.data.name, result })
             })
