@@ -17,3 +17,12 @@ hr {
 .results table {
   margin-top: 80px
 }
+
+img{
+  height: 200px;
+  width: 200px;
+}
+
+.cont{
+  text-align: center;
+}
