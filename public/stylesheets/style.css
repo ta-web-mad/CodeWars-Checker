@@ -1,70 +1,19 @@
-*{
-  box-sizing: border-box;
+h1, label, p {
+  font-weight: 100
 }
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-  h1{
-    width: 100%;
-    text-align: center;
-  }
+.index.container .row, .results.container .row{
+  min-height: 100vh;
+}
 
-  form{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  select{
-    width: 80%;
-  }
-  .cont{
-    display: flex;
-    height: 400px;
-    width: 100%;
-  }
-
-  .inputId{
-    width: 80%;
-  }
-
-
-.code {
-  padding: 0;
-  margin: 0;
-  height: 20px;
-  width: 100px;
-  border-radius: 5px;
-  background-color: bisque; }
+hr {
+  margin: 30px 0 80px 0;
+}
 
 .btn {
-  padding: 0;
-  margin: 0;
-  height: 20px;
-  width: 50px;
-  border-radius: 5px;
-  background-color: darkgrey; }
-
-.student {
-  display: flex; 
-  justify-content: space-around;
-  align-items: center;
-  width: 500px;
+  margin-top: 40px
 }
 
-.res {
-  border-radius: 10px; 
-  padding: 10px 0;
-  width: 10%;
-  height: 50px;
-  text-align: center;
+.results table {
+  margin-top: 80px
 }
-
-.pass {
-  background-color: green; }
-
-.fail {
-  background-color: red; }
-
