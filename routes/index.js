@@ -123,7 +123,7 @@ router.post('/result', (req, res, next) => {
        Promise.all(course.students.map((student)=>{
         return axios.get(`https://www.codewars.com/api/v1/users/${student.codewars}/code-challenges/completed?page=0`)
         .then((dataUser)=>{
-          console.log(dataUser)
+          console.log(dataUser, student.name )
           const user = {name:student.name}
           user.katas = dataUser.data.data
           return user

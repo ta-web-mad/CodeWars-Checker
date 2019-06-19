@@ -6,7 +6,7 @@ const newCourse = {
  courseName : "WEB MAD MAY 19",
  students : [
   {name:"Alessio",codewars:"evilloh"},
-  // {name:"Anthony",codewars:"MicaelZV"},
+  {name:"Anthony",codewars:"totixter"},
   {name:"Ben",codewars:"bengarc@gmail.com"},
   {name:"Cris",codewars:"LadyCrispy"},
   {name:"Jorge",codewars:"JorgeAngst"},
