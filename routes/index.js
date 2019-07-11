@@ -102,7 +102,6 @@ router.post('/result', (req, res, next) => {
                 percentage: 0
               }
               statistics.percentage = parseFloat((100/statistics.students)*statistics.passOk).toFixed(2)
-              console.log(statistics)
               res.render("result", { kataName: dataKata.data.name, result, statistics })
             })
         })
