@@ -72,9 +72,8 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/result', (req, res, next) => {
-
   Course.findOne({ courseName: req.body.Course })
-    .then((course) => {
+  .then((course) => {
       axios.get(`${kata}${req.body.kataId}`)
         .then((dataKata) => {
           Promise.all(course.students.map((student) => {
@@ -85,7 +84,7 @@ router.post('/result', (req, res, next) => {
                 return user
               })
               .catch((err) => {
-                console.log(err)
+                console.log( student)
               })
           }))
             .then(arrUser => {
@@ -97,8 +96,14 @@ router.post('/result', (req, res, next) => {
               if(result.length>0){
                 result[Math.floor(Math.random() * result.length)].pass = true
               }
-              // TODO
-              res.render("result", { kataName: dataKata.data.name, result })
+              let statistics = {
+                students: course.students.length,
+                passOk: result.length,
+                percentage: 0
+              }
+              statistics.percentage = parseFloat((100/statistics.students)*statistics.passOk).toFixed(2)
+              console.log(statistics)
+              res.render("result", { kataName: dataKata.data.name, result, statistics })
             })
         })
         .catch((err) => {
