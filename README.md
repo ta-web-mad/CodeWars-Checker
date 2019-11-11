@@ -1,30 +1,28 @@
 # Code-Wars-Checker
 Check the kata results
 
-SEED.JS
+<img src="https://github.com/IronHackTAs/Code-Wars-Checker/blob/master/public/images/logojirafa.jpg?raw=true" alt="Ironhack" width="200"/>
 
-Para crear un nuevo bootcamp, modificar el archivo seed.js:
+## SEED.JS
 
-courseName: nombre que identifica al curso
-students: lista de alumnos
-  name: nombre o apodo del alumno
-  codewars: usuario de codewars, escrito exactamente ( sensible a mayusculas y minusculas)
+Para crear un nuevo bootcamp, modificar el archivo bin/seed.js:
 
-CONFIGURACIÓN
+- courseName: nombre que identifica al curso
+- students: lista de alumnos
+  - name: nombre o apodo del alumno
+  - codewars: usuario de codewars, escrito exactamente ( sensible a mayusculas y minusculas)
+
+## CONFIGURACIÓN
 
   Info y Claves disponibles en el Trello de TAs.
 
-DEPLOY
+## DEPLOY
 
 Actualmente la aplicación está desplegada en Heroku:
-  https://git.heroku.com/codewarschecker.git
+  - Usuario y contraseña en Trello de TAs.
 
-USO
+## USO
 
   La aplicación está accesible desde: 
-    https://codewarschecker.herokuapp.com/
-
-Valid views:
-index.hbs,
-result.hbs
+    - https://codewarsironchecker.herokuapp.com/
 
