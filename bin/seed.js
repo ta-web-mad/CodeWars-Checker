@@ -3,27 +3,26 @@ const mongoose     = require('mongoose');
 const Course = require('../models/Course');
 
 const newCourse = {
- courseName : "WEB MAD JUL 19",
+ courseName : "WEB MAD OCT 19",
  students : [
-  {name:"Ester",codewars:"EBGEster"},
-  {name:"Inma",codewars:"InmaSA"},
-  {name:"Iván",codewars:"ZellDincht"},
-  {name:"Carlos Kruger",codewars:"carloskruger"},
-  {name:"Lucía",codewars:"luciasuelves"},
-  {name:"María",codewars:"mariaShecodes"},
-  {name:"Ousmane",codewars:"Ousmane11"},
-  {name:"Ignacio",codewars:"NachoAJ"},
-  {name:"Josue",codewars:"biojosu"},
-  {name:"Andrés",codewars:"Eazzsen"},
-  {name:"Fernando",codewars:"fernandorodrigueztig"},
-  {name:"Rebeca",codewars:"rebeca"},
-  {name:"Luis",codewars:"laanayam333"},
-  {name:"Carlos Kompier",codewars:"kompier"},
-  {name:"Carla",codewars:"carlavalentina"},
-  {name:"Alex",codewars:"alexpand"},
-  {name:"José Ramón",codewars:"medinajr"},
+  {name:"Fran N.",codewars:"f-naranjo"},
+  {name:"Dani",codewars:"daniel.gonvie"},
+  {name:"Edu",codewars:"Eduardo290686"},
+  {name:"Manué",codewars:"Manuee97"},
+  {name:"Flor",codewars:"f!or"},
+  {name:"Javi",codewars:"Javiview"},
+  {name:"Kike",codewars:"enriqueMontano"},
+  {name:"Fran M.",codewars:"FranciscoMolleda"},
+  {name:"Héctor",codewars:"HectorArrieta"},
+  {name:"Estefanía",codewars:"estefania-git"},
+  {name:"Gabriel",codewars:"gabzafra"},
+  {name:"Laura",codewars:"laudvg"},
+  {name:"María",codewars:"mariasimo"},
+  {name:"Alfredo",codewars:"adelcanto"},
+  {name:"Sonia",codewars:"SoniaCB"},
 ]}
 
+console.log(process.env.MONGO)
 mongoose
   .connect(`${process.env.MONGO}`, {useNewUrlParser: true})
   .then(x => {

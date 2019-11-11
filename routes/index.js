@@ -4,30 +4,6 @@ const router = express.Router();
 const axios = require('axios');
 const kata = "https://www.codewars.com/api/v1/code-challenges/";
 
-// let result = {
-//   name: "",
-//   list: [],
-//   counter:0
-// }
-let Students = [
-  { name: "Agustín", codewars: "Agucarpar" },
-  { name: "Micael", codewars: "MicaelZV" },
-  { name: "Rafa", codewars: "Nostrarafus" },
-  { name: "Rubén", codewars: "rubander" },
-  { name: "Vanesa", codewars: "vane84" },
-  { name: "Javi", codewars: "Javinovix" },
-  { name: "Jesús", codewars: "GMSP4" },
-  { name: "Gabriel", codewars: "Lynx92" },
-  { name: "Shakir", codewars: "shakirgamzaev" },
-  { name: "Carlos", codewars: "carlosCodeWars" },
-  { name: "Iván", codewars: "IvanLopezR" },
-  { name: "Sergio", codewars: "stortosa" },
-  { name: "Francho", codewars: "Francho" },
-  { name: "Miriam", codewars: "Miriloper" },
-  { name: "Juan", codewars: "JuanAlbea" },
-
-
-]//.sort((name, name2)=> {return name.name.localeCompare(name2.name)})
 let eachStudent = {
   name: "",
   pass: false
