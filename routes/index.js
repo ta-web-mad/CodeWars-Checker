@@ -4,42 +4,6 @@ const router = express.Router();
 const axios = require('axios');
 const kata = "https://www.codewars.com/api/v1/code-challenges/";
 
-let eachStudent = {
-  name: "",
-  pass: false
-}
-
-router.get('/a', (req, res, next) => {
-  res.render('index');
-});
-
-
-router.post('/Cresult', (req, res, next) => {
-  result.id = req.body.kataId;
-  axios.get(`${kata}${result.id}`)
-    .then((dataKata) => {
-      result.name = dataKata.data.name;
-      result.id = dataKata.data.id;
-      Students.forEach(student => {
-        axios.get(`https://www.codewars.com/api/v1/users/${student}/code-challenges/completed?page=0`)
-          .then((dataUser) => {
-            eachStudent.name = student;
-            dataUser.data.data.forEach(eachKata => {
-              if (eachKata.id === result.id) {
-                console.log(student, "PASS")
-              }
-            })
-          }).catch(err => {
-            console.log(err)
-          })
-      })
-      res.render("consoleResult")
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-});
-
 router.get('/', (req, res, next) => {
   Course.find({})
     .then(data => {
@@ -84,16 +48,8 @@ router.post('/result', (req, res, next) => {
         .catch((err) => {
           console.log(err)
         })
-
     })
     .catch((err) => { console.log(err) })
-
 });
-
-
-
-
-
-
 
 module.exports = router;
