@@ -12,7 +12,11 @@ Para crear un nuevo bootcamp, modificar el archivo bin/seed.js:
   - name: nombre o apodo del alumno
   - codewars: usuario de codewars, escrito exactamente ( sensible a mayusculas y minusculas)
 
-## CONFIGURACIÓN
+## RUN
+
+Ejecutar localmente con npm run dev.
+
+<!-- ## CONFIGURACIÓN
 
   Info y Claves disponibles en el Trello de TAs.
 
@@ -25,4 +29,5 @@ Actualmente la aplicación está desplegada en Heroku:
 
   La aplicación está accesible desde: 
     - https://codewarsironchecker.herokuapp.com/
+ -->
 
