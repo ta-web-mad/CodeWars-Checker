@@ -1,28 +1,32 @@
-h1, label, p {
-  font-weight: 100
+h1,
+label,
+p {
+	font-weight: 100;
 }
 
-.index.container .row, .results.container .row{
-  min-height: 100vh;
+.index.container .row,
+.results.container .row {
+	min-height: 100vh;
 }
 
 hr {
-  margin: 30px 0 80px 0;
+	margin: 30px 0 80px 0;
 }
 
 .btn {
-  margin-top: 40px
+	margin-top: 40px;
 }
 
 .results table {
-  margin-top: 80px
+	margin-top: 80px;
 }
 
-img{
-  height: 200px;
-  width: 200px;
+img {
+	height: 200px;
+	width: 200px;
+	object-fit: contain;
 }
 
-.cont{
-  text-align: center;
+.cont {
+	text-align: center;
 }
